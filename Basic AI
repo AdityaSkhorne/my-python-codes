@@ -1,0 +1,32 @@
+import random
+
+class AI:
+    def __init__(self):
+        self.name = "AI"
+
+    def greet(self):
+        print(f"Hello! I am {self.name}. How can I assist you today?")
+
+    def generate_response(self, user_input):
+        greetings = ["hello", "hi", "hey"]
+        farewells = ["bye", "goodbye", "see you"]
+
+        if user_input.lower() in greetings:
+            return "Hello! How can I help you?"
+
+        elif user_input.lower() in farewells:
+            return "Goodbye! Have a great day!"
+
+        else:
+            return "I'm sorry, I didn't understand that. Can you please rephrase?"
+
+if __name__ == "__main__":
+    ai = AI()
+    ai.greet()
+
+    while True:
+        user_input = input(">> ")
+        response = ai.generate_response(user_input)
+        print(response)
+        if user_input.lower() in ["bye", "goodbye", "see you"]:
+            break
